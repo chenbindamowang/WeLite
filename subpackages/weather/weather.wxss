@@ -1,0 +1,54 @@
+page {
+    height: 100%;
+}
+
+.weatherHeader {
+    position: relative;
+    font-size: 36rpx;
+    color: white;
+    height: 92rpx;
+    line-height: 92rpx;
+    text-indent: 32rpx;
+}
+
+.weatherBy {
+    position: absolute;
+    bottom: 0;
+    right: 32rpx;
+    font-size: 24rpx;
+    line-height: 28rpx;
+}
+
+.weatherBody {
+    height: calc(100% - 92rpx);
+    overflow-y: scroll;
+}
+
+.weatherItems {
+    margin: 16rpx auto;
+    width: 686rpx;
+    font-size: 28rpx;
+    color: white;
+    border: 1rpx solid transparent;
+    box-sizing: border-box;
+    padding: 24rpx;
+    background: rgba(136, 136, 136, 0.38);
+    box-shadow: 0 6rpx 10rpx rgba(0, 0, 0, 0.54);
+    border-radius: 8rpx;
+}
+
+.more {
+    position: absolute;
+    bottom: 32rpx;
+    right: 32rpx;
+    background: linear-gradient(-60deg, #888, #b8b8b8 50%, #505050);
+    line-height: 80rpx;
+    width: 80rpx;
+    text-align: center;
+    font-size: 24rpx;
+    border-radius: 40rpx;
+    color: wheat;
+    box-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.54);
+}
+
+

@@ -1,0 +1,65 @@
+<!--index.wxml-->
+<!-- <import src="../templates/template.wxml" /> -->
+
+<swiper class='body' style='height:{{sys.windowHeight}}px' indicator-dots indicator-color='white' indicator-active-color='#fc6' duration='200' current='1'>
+    <swiper-item>
+        <view class='home'>
+            <view class='userImgBox'>
+                <open-data class='userImg' type="userAvatarUrl"></open-data>
+            </view>
+
+            <view class='userNames'>
+                <open-data class='userName' type="userNickName" lang="zh_CN"></open-data>
+                <view>
+                    <text>今天也要元气满满哦 </text>
+                    <text>(*╹▽╹*)</text>
+                </view>
+            </view>
+            <view class='homeTimeBox'>
+                <view class='homeTime1'>
+                    <text>{{timeData.hour}}</text>
+                    <text class='timeDots'>:</text>{{timeData.min}}</view>
+                <view class='homeTime2'>{{timeData.month}}月{{timeData.today}}日 星期{{timeData.day}}</view>
+                <view class='homeTime2 ' wx:if="{{prower}}">
+                    <text>{{prower.isCharging ? '正在充电' : '电量剩余'}}</text>
+                    <text>{{prower.level}}%</text>
+                </view>
+
+            </view>
+
+            <view class='prower'>
+                <view wx:if="{{prower.isCharging}}" class='prowerIsCharging'>
+                    <view class='prowerIsChargingHeader'></view>
+                    <view class='prowerColor' style='max-height:{{prower.level}}%'></view>
+                </view>
+            </view>
+        </view>
+
+    </swiper-item>
+    <swiper-item>
+        <view class='functions'>
+            <navigator target='self' url='../../subpackages/setting/setting' open-type='navigate' class='list' hover-class=''>
+                <image src='../../img/setting.png'></image>
+                <view>设置</view>
+            </navigator>
+            <navigator target='self' url='../../subpackages/weather/weather' open-type='navigate' class='list' hover-class=''>
+                <image src='../../img/weather.png'></image>
+                <view>天气</view>
+            </navigator>
+            <navigator target='self' url='../../subpackages/signIn/signIn' open-type='navigate' class='list' hover-class=''>
+                <image src='../../img/signIn.png'></image>
+                <view>打卡</view>
+            </navigator>
+            <navigator target='self' url='../../subpackages/music/music' open-type='navigate' class='list' hover-class=''>
+                <image src='../../img/music.png'></image>
+                <view>音乐</view>
+            </navigator>
+            <navigator target='self' url='../../subpackages/beauty/beauty' open-type='navigate' class='list' hover-class=''>
+                <image src='../../img/beauty.png'></image>
+                <view>美女</view>
+            </navigator>
+
+        </view>
+    </swiper-item>
+
+</swiper>

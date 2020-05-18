@@ -1,0 +1,23 @@
+<!--subpackages/fun/fun.wxml-->
+<scroll-view class='funNav' scroll-x scroll-with-animation>
+    <block wx:for="{{nav}}">
+        <view class='funNavType {{navidx == index ? "funNavCheck" : ""}}' data-type="{{item.type}}" data-idx="{{index}}" bindtap='switchNav'>
+           <text> {{item.name}}</text>
+        </view>
+    </block>
+</scroll-view>
+
+
+<scroll-view class='funBody' scroll-y bindscrolltolower="onReachBottom">
+    <view class='l'>
+        <block wx:for="{{list}}" wx:for-item="datas">
+            <image wx:if="{{index%2==0}}" class='funImg' src='{{datas.thumb}}' mode='widthFix'  data-src="{{datas.thumb}}" bindtap='prawImg'></image>
+        </block>
+    </view>
+    <view class='r'>
+        <block wx:for="{{list}}" wx:for-item="datas">
+            <image wx:if="{{index%2==1}}" class='funImg' src='{{datas.thumb}}' mode='widthFix' data-src="{{datas.thumb}}"bindtap='prawImg'></image>
+        </block>
+    </view>
+
+</scroll-view>

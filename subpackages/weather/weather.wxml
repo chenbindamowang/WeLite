@@ -1,0 +1,22 @@
+<block wx:if="{{t}}">
+    <view class='weatherHeader' wx:if="{{basic}}">
+        {{basic.parent_city}} / {{basic.location}}
+        <view class='weatherBy' bindtap='heWeather'>当前数据来源--和风天气</view>
+    </view>
+    <view class='weatherBody' wx:if='{{now.tmp}}'>
+        <view class='weatherItems'>
+            <text>现在\n温度: {{now.tmp}}℃\n相对湿度: {{now.hum}}\n天气: {{now.cond_txt}}\n风向: {{now.wind_dir}}\n风力: {{now.wind_sc}}\n风速: {{now.wind_spd}}公里/小时</text>
+        </view>
+        <view class='weatherItems' wx:for='{{hourly}}'>
+            <text>{{item.time}}\n温度: {{item.tmp}}℃\n相对湿度: {{item.hum}}\n天气: {{item.cond_txt}}\n风向: {{item.wind_dir}}\n风力: {{item.wind_sc}}\n风速: {{item.wind_spd}}公里/小时</text>
+        </view>
+    </view>
+
+
+</block>
+<block>
+
+
+</block>
+
+<view class='more' bindtap='more' data-t="{{t}}">{{t ? '其他' : '当前'}}</view>

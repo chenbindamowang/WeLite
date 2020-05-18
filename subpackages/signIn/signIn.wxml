@@ -1,0 +1,36 @@
+<!--subpackages/signIn/signIn.wxml-->
+
+<view class='signInHeader'>
+
+
+    <view bindtap='sign' data-condition='getup'>
+        <image class='clokInImg' src='../img/sunUp.png'></image>
+        <text>我起床啦</text>
+    </view>
+    <view bindtap='sign' data-condition='seelp'>
+        <image class='clokInImg' src='../img/sunDown.png'></image>
+        <text>我要睡了</text>
+    </view>
+
+
+</view>
+<view class='signTitle'>打卡记录</view>
+<view class='signList'>
+    <block wx:if="{{list.length>0}}">
+        <view class='signItem' wx:for="{{list}}" wx:key="list">
+            <view class='signTime'>{{item.today.month}}/{{item.today.today}}</view>
+            <view class='signTime1' wx:if="{{item.getup}}">
+                <text>起床时间~</text>
+                <text>{{item.getup.hour}}:{{item.getup.min}}</text>
+            </view>
+             <view class='signTime1' wx:if="{{item.seelp}}">
+                <text>睡觉时间~</text>
+                <text>{{item.seelp.hour}}:{{item.seelp.min}}</text>
+            </view>
+        </view>
+    </block>
+    <block wx:else>
+        <view class='noSign'>还没有打过卡呢</view>        
+    </block>
+
+</view>

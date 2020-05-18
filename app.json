@@ -1,0 +1,27 @@
+{
+    "pages": [
+        "pages/index/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "black",
+        "navigationBarBackgroundColor": "#505050",
+        "navigationBarTitleText": "",
+        "navigationBarTextStyle": "white",
+        "navigationStyle": "default"
+    },
+    "subPackages": [
+        {
+            "root": "subpackages",
+            "pages": [
+                "weather/weather",
+                "setting/setting",
+                "signIn/signIn",
+                "music/music",
+                "beauty/beauty",
+                "webview/webview"
+            ]
+        }
+    ],
+    "debug": true,
+    "sitemapLocation": "sitemap.json"
+}
