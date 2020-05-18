@@ -1,6 +1,6 @@
 // packages/signIn/signIn.js
 
-const { time }= require('../../utils/util.js');
+import { time } from '../../utils/util.js';
 Page({
 
     data: {

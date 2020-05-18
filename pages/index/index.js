@@ -1,21 +1,20 @@
 //
-const app = getApp(),
-    { time } = require('../../utils/util.js'),
-    prower = (page) => {
-        wx.getBatteryInfo({
-            success: function(res) {
-
-                page.setData({
-                    prower: res
-                })
-            },
-            fail: function(res) {
-                page.setData({
-                    prower: {}
-                })
-            }
-        })
-    };
+const app = getApp();
+import { time } from '../../utils/util.js';
+const getPrower = (page) => {
+    wx.getBatteryInfo({
+        success: function (res) {
+            page.setData({
+                prower: res
+            });
+        },
+        fail: function (res) {
+            page.setData({
+                prower: {}
+            });
+        }
+    });
+};
 
 Page({
     data: {
@@ -23,17 +22,16 @@ Page({
     },
     onLoad: function() {
         let that = this;
-        // prower(that);
+        // getPrower(that);
         that.setData({
             timeData: time(new Date()),
             sys: wx.getSystemInfoSync()
         })
-
         setInterval(() => {
             that.setData({
                 timeData: time(new Date())
             })
-            // prower(that);
+            // getPrower(that);
         }, 1000 * 6);
     },
     buttonErr: function(e) {

@@ -29,7 +29,7 @@ const formatNumber = n => {
     n = n.toString()
     return n[1] ? n : '0' + n
 }
-const time = (date)=>{
+const time = (date) => {
     let timeData = {
         year: date.getFullYear(),
         month: date.getMonth() + 1,
@@ -43,6 +43,6 @@ const time = (date)=>{
 }
 
 
-module.exports = {
+export default {
     time: time,
 }

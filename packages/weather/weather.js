@@ -11,21 +11,15 @@ const key = '9ef761e74cc34c71816079e8145d5a96',
                 "content-type": "application/x-www-form-urlencoded"
             },
             method: 'GET',
-            success: function(res) {
+            success: function (res) {
                 console.log(res);
                 if (res.errMsg == 'request:ok') {
                     that.setData(res.data.HeWeather6[0]);
-                    // wx.setNavigationBarTitle({
-                    //     title: res.data.HeWeather6[0].basic.location,
-                    //     success: function(res) {},
-                    //     fail: function(res) {},
-                    //     complete: function(res) {},
-                    // })
                 }
 
             },
-            fail: function(res) {},
-            complete: function(res) {},
+            fail: function (res) { },
+            complete: function (res) { },
         })
     },
     heweathernow = (that, datas) => {
@@ -36,15 +30,15 @@ const key = '9ef761e74cc34c71816079e8145d5a96',
                 "content-type": "application/x-www-form-urlencoded"
             },
             method: 'GET',
-            success: function(res) {
+            success: function (res) {
                 console.log(res);
                 if (res.errMsg == 'request:ok') {
                     that.setData(res.data.HeWeather6[0]);
                 }
 
             },
-            fail: function(res) {},
-            complete: function(res) {},
+            fail: function (res) { },
+            complete: function (res) { },
         })
     },
     openweatherApi = (that, datas) => {
@@ -68,107 +62,81 @@ const key = '9ef761e74cc34c71816079e8145d5a96',
     };
 
 Page({
-
-
     data: {
-        t:true
+        t: true
     },
-
-
-    onLoad: function(options) {
-
-
+    onLoad: function (options) {
         let that = this;
-     
-        new Promise((s, f) => {
-
-            wx.getLocation({
-                type: 'gcj02',
-                altitude: false,
-                success: function(res) {
-                    s(res);
-                },
-                fail: function(res) {
-                    f('locationErr');
-                },
-                complete: function(res) {},
-            })
-        }).then((res) => {
-            console.log(res)
-
-            heweather(that, {
-                location: res.longitude + ',' + res.latitude,
-                key: key,
-            });
-            heweathernow(that, {
-                location: res.longitude + ',' + res.latitude,
-                key: key,
-            });
-           
-        }).catch((res) => {
-            console.log(res)
-            if (res == 'locationErr') {
+        wx.getLocation({
+            type: 'gcj02',
+            altitude: false,
+            success: function (res) {
+                heweather(that, {
+                    location: res.longitude + ',' + res.latitude,
+                    key: key,
+                });
+                heweathernow(that, {
+                    location: res.longitude + ',' + res.latitude,
+                    key: key,
+                });
+            },
+            fail: function (res) {
                 wx.showToast({
                     title: '定位失败',
                     icon: 'none',
                     duration: 1000,
                     mask: true
                 })
-            }
+            },
+            complete: function (res) { },
+        })
 
+    },
+    choosecity: function () {
+        wx.chooseLocation({
+            success: function (res) {
+                console.log(res)
+            },
+            fail: function (res) { },
+            complete: function (res) { },
         })
     },
-    choosecity:function(){
-       wx.chooseLocation({
-           success: function(res) {
-               console.log(res)
-           },
-           fail: function(res) {},
-           complete: function(res) {},
-       })
-    },
-    heWeather:function(){
+    heWeather: function () {
         wx.navigateTo({
             url: '../webview/webview?src=http://www.heweather.com/',
-            success: function(res) {},
-            fail: function(res) {},
-            complete: function(res) {},
+            success: function (res) { },
+            fail: function (res) { },
+            complete: function (res) { },
         })
     },
-    more:function(e){
-        
+    more: function (e) {
         this.setData({
-            t: !(e.currentTarget.dataset.t)
+            t: !e.currentTarget.dataset.t
         })
     },
-    onReady: function() {
+    onReady: function () {
 
     },
 
-    onShow: function() {
+    onShow: function () {
 
     },
 
-    onHide: function() {
-
-    },
-
-
-    onUnload: function() {
+    onHide: function () {
 
     },
 
 
-    onPullDownRefresh: function() {
-
-    },
-
-    onReachBottom: function() {
+    onUnload: function () {
 
     },
 
 
-    //   onShareAppMessage: function () {
+    onPullDownRefresh: function () {
 
-    //   }
+    },
+
+    onReachBottom: function () {
+
+    },
 })

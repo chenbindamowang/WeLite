@@ -1,6 +1,5 @@
 // packages/fun/fun.js
-const app = getApp(),
-    g = app.globalData;
+const app = getApp(),{globalData} = app;
 
 let nav = [ {
         name: "小清新",
@@ -37,8 +36,8 @@ let nav = [ {
         wx.request({
             url: g.showapi_url + url,
             data: {
-                showapi_appid: g.showapi_appid,
-                showapi_sign: g.showapi_sign,
+                showapi_appid: globalData.showapi_appid,
+                showapi_sign: globalData.showapi_sign,
                 page: page,
                 num: 20,
                 type: types
@@ -75,10 +74,6 @@ let nav = [ {
     }
 
 Page({
-
-    /**
-     * 页面的初始数据
-     */
     data: {
         nav: nav,
         list: [],
@@ -104,65 +99,26 @@ Page({
             complete: function(res) {},
         })
     },
-    /**
-     * 生命周期函数--监听页面加载
-     */
     onLoad: function(options) {
         getFun(this);
 
     },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
     onReady: function() {
 
     },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
     onShow: function() {
 
     },
-
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
     onHide: function() {
 
     },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
     onUnload: function() {
         page = 1;
         types = 35;
     },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function() {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
+    onPullDownRefresh: function() { },
     onReachBottom: function() {
         getFun(this);
     },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function() {
-
-    },
-    onPageScroll: function(e) {
-        console.log(e);
-    },
+    onShareAppMessage: function() { },
 })
