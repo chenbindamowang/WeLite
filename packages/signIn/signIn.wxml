@@ -1,4 +1,4 @@
-<!--subpackages/signIn/signIn.wxml-->
+<!--packages/signIn/signIn.wxml-->
 
 <view class='signInHeader'>
 

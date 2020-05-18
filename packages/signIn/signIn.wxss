@@ -1,4 +1,4 @@
-/* subpackages/signIn/signIn.wxss */
+/* packages/signIn/signIn.wxss */
 
 page {
     height: 100%;

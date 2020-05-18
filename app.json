@@ -2,16 +2,9 @@
     "pages": [
         "pages/index/index"
     ],
-    "window": {
-        "backgroundTextStyle": "black",
-        "navigationBarBackgroundColor": "#505050",
-        "navigationBarTitleText": "",
-        "navigationBarTextStyle": "white",
-        "navigationStyle": "default"
-    },
     "subPackages": [
         {
-            "root": "subpackages",
+            "root": "packages",
             "pages": [
                 "weather/weather",
                 "setting/setting",
@@ -22,6 +15,13 @@
             ]
         }
     ],
+    "window": {
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "#505050",
+        "navigationBarTitleText": "",
+        "navigationBarTextStyle": "black",
+        "navigationStyle": "default"
+    },
     "debug": true,
     "sitemapLocation": "sitemap.json"
 }

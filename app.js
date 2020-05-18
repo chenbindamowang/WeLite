@@ -5,7 +5,7 @@ App({
     Welcome To WeLite !
     If you have any good ideas...
     Email to 495159693@qq.com
-    thank you ლ(′◉❥◉｀ლ) 
+    Thank you ლ(′◉❥◉｀ლ) 
     `)
 
     },

@@ -1,4 +1,4 @@
-<!--subpackages/fun/fun.wxml-->
+<!--packages/fun/fun.wxml-->
 <scroll-view class='funNav' scroll-x scroll-with-animation>
     <block wx:for="{{nav}}">
         <view class='funNavType {{navidx == index ? "funNavCheck" : ""}}' data-type="{{item.type}}" data-idx="{{index}}" bindtap='switchNav'>

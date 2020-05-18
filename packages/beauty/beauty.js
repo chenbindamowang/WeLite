@@ -1,4 +1,4 @@
-// subpackages/fun/fun.js
+// packages/fun/fun.js
 const app = getApp(),
     g = app.globalData;
 

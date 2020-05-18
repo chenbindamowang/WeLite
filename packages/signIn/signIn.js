@@ -1,4 +1,4 @@
-// subpackages/signIn/signIn.js
+// packages/signIn/signIn.js
 
 const { time }= require('../../utils/util.js');
 Page({

@@ -1,4 +1,4 @@
-// subpackages/music/music.js
+// packages/music/music.js
 
 
 

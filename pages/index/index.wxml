@@ -38,23 +38,23 @@
     </swiper-item>
     <swiper-item>
         <view class='functions'>
-            <navigator target='self' url='../../subpackages/setting/setting' open-type='navigate' class='list' hover-class=''>
+            <navigator target='self' url='../../packages/setting/setting' open-type='navigate' class='list' hover-class=''>
                 <image src='../../img/setting.png'></image>
                 <view>设置</view>
             </navigator>
-            <navigator target='self' url='../../subpackages/weather/weather' open-type='navigate' class='list' hover-class=''>
+            <navigator target='self' url='../../packages/weather/weather' open-type='navigate' class='list' hover-class=''>
                 <image src='../../img/weather.png'></image>
                 <view>天气</view>
             </navigator>
-            <navigator target='self' url='../../subpackages/signIn/signIn' open-type='navigate' class='list' hover-class=''>
+            <navigator target='self' url='../../packages/signIn/signIn' open-type='navigate' class='list' hover-class=''>
                 <image src='../../img/signIn.png'></image>
                 <view>打卡</view>
             </navigator>
-            <navigator target='self' url='../../subpackages/music/music' open-type='navigate' class='list' hover-class=''>
+            <navigator target='self' url='../../packages/music/music' open-type='navigate' class='list' hover-class=''>
                 <image src='../../img/music.png'></image>
                 <view>音乐</view>
             </navigator>
-            <navigator target='self' url='../../subpackages/beauty/beauty' open-type='navigate' class='list' hover-class=''>
+            <navigator target='self' url='../../packages/beauty/beauty' open-type='navigate' class='list' hover-class=''>
                 <image src='../../img/beauty.png'></image>
                 <view>美女</view>
             </navigator>

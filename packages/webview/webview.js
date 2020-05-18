@@ -1,4 +1,4 @@
-// subpackages/seetting/seetting.js
+// packages/webview/webview.js
 Page({
 
   /**
@@ -12,7 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+      this.setData(options)
   },
 
   /**

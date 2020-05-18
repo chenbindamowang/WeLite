@@ -1,4 +1,4 @@
-/* subpackages/music/music.wxss */
+/* packages/music/music.wxss */
 
 .player{
     position: fixed;
